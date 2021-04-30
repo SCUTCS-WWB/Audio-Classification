@@ -1,6 +1,6 @@
 {
 	"dataset_name": "USC",
-	"data_dir": "/home/gaoya/data/USC/store/",
+	"data_dir": "/media/disk4t/data/USC/store",
 	"dataaug": true,
 	"pretrained": true,
 	"scheduler": true,
@@ -11,5 +11,5 @@
 	"lr": 1e-4,
     "weight_decay": 1e-3,
     "num_folds": 10,
-    "checkpoint_dir": "./checkpoint/USC/Baseline/"
+    "checkpoint_dir": "/media/disk4t/data/Audio-Classification/checkpoint/USC/ResNet/"
 }

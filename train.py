@@ -16,6 +16,9 @@ import dataloaders.datasetnormal
 from tqdm import tqdm
 from tensorboardX import SummaryWriter
 
+import warnings
+warnings.simplefilter('ignore')
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--config_path", type=str)
 

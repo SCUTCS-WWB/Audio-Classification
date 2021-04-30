@@ -7,6 +7,7 @@ import torch
 import torchaudio
 import torchvision
 from PIL import Image
+from tqdm import tqdm
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--csv_file", type=str)
@@ -41,11 +42,11 @@ def extract_spectrogram(values, clip, entries, sr):
 def extract_features(audios):
 	audio_names = list(audios.slice_file_name.unique())
 	values = []
-	for audio in audio_names:
+	for audio in tqdm(audio_names, total=len(audio_names)):
 		entries = audios.loc[audios["slice_file_name"]==audio].to_dict(orient="records")
 		clip, sr = librosa.load("{}fold{}/{}".format(args.data_dir, entries[0]["fold"], audio)) #All audio all sampled to a sampling rate of 22050
 		extract_spectrogram(values, clip, entries, sr)
-		print("Finished audio {}".format(audio))
+		
 	return values
 
 if __name__=="__main__":
