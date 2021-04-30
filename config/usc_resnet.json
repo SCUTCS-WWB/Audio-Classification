@@ -1,6 +1,6 @@
 {
 	"dataset_name": "USC",
-	"data_dir": "/media/disk4t/data/USC/store",
+	"data_dir": "/media/disk4t/data/USC/store/",
 	"dataaug": true,
 	"pretrained": true,
 	"scheduler": true,
