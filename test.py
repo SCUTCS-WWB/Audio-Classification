@@ -23,7 +23,7 @@ if __name__ == "__main__":
     NUM_WORKERS = 0
 
     for i in range(1, NUM_FOLD['ESC']+1):
-        val_loader = dataloaders.datasetnormal.fetch_dataloader("{}validation128mel{}.pkl".format('/media/disk4t/data/ESC/store/', i),
+        val_loader = dataloaders.datasetnormal.fetch_dataloader("{}validation128mel{}.pkl".format('/media/disk4t/data/ESC/store', i),
                                                                 'ESC', BATCH_SIZE, NUM_WORKERS)
 
         model = models.resnet.ResNet('ESC', False).to(device)
